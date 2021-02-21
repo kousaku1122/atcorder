@@ -1,20 +1,14 @@
-s = gets.chomp.split(//)
-ans = "No"
-s.length.times do |i|
-  if i.even?
-    if s[i] != s[i].downcase
-      ans = "No"
-      break
-    else
-      ans = "Yes"
-    end
-  else
-    if s[i] != s[i].upcase
-      ans = "No"
-      break
-    else
-      ans = "Yes"
-    end
-  end
-end
-puts ans
+s = gets.chomp.split("")
+ans = true
+(0...s.size).step(2){ |i|
+  if s[i] != s[i].downcase
+    ans = false
+	end
+}
+
+(1...s.size).step(2){ |i|
+  if s[i] != s[i].upcase
+    ans = false
+	end
+}
+puts ans ? "Yes" : "No"
