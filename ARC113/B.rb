@@ -1,3 +1,2 @@
 a, b, c = gets.split(" ").map(&:to_i)
-k = b ** c
-puts (a ** k).digits[0]
+puts a.pow(b.pow(c, 4)+4, 10)
