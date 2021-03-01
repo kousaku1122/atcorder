@@ -1,14 +1,14 @@
-array=[]
-ans = -1
-i = 0
+ans = []
+
 gets.to_i.times do
-  array<< gets.split(" ").map(&:to_i)
+  a =  gets.split(" ").map(&:to_i)
+  if a[2] -a[0] > 0
+    ans << a[1]
+  end
 end
-array.size.times do |i|
-    if 0 < array[i][2]-array[i][0]
-      if ans == -1 || array[i][1] < ans
-        ans = array[i][1]
-      end
-    end
+
+if ans.size == 0
+  puts (-1)
+else
+  puts(ans.min)
 end
-puts ans
